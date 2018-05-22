@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PersonCss.css';
+import styles from './PersonCss.css';
 
 
 class PersonCss extends Component {
@@ -11,15 +11,15 @@ class PersonCss extends Component {
   render(){
 
     const { persons } = this.props;
-    let classes = 'li';
+    let classes = styles.li;
    
 
     if(this.state.color !== ''){
-      classes += ` ${this.state.color}`;
+      classes += ` ${styles[this.state.color]}`;
     }
 
     return(
-      <ul className="ul">
+      <ul className={styles.ul}>
         {persons.map(item => (
           <li key={item.name} className={classes}>
             <span>{item.name}</span>
